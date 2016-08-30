@@ -1,7 +1,6 @@
 package com.liwe.myapp.base;
 
 import android.content.Context;
-import android.view.View;
 
 /**
  * Date： 2016/8/30.
@@ -21,7 +20,7 @@ public interface IBaseActivity {
      *
      * @param view 当前视图对象
      */
-    public void initView(final View view);
+//    public void initView(final View view);
 
     /**
      * 业务处理操作（onCreate方法中调用）

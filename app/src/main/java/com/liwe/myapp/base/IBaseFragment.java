@@ -1,7 +1,6 @@
 package com.liwe.myapp.base;
 
 import android.content.Context;
-import android.view.View;
 
 /**
  * Date： 2016/8/30.
@@ -19,7 +18,7 @@ public interface IBaseFragment {
     /**
      * 初始化控件
      */
-    public void initView(final View view);
+//    public void initView(final View view);
 
     /**
      * 业务处理操作（onCreateView方法中调用）

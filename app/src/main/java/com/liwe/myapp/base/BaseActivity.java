@@ -24,12 +24,12 @@ public abstract class BaseActivity  extends Activity implements  IBaseActivity {
         mContextView = LayoutInflater.from(this).inflate(bindLayout(),null);
         setContentView(mContextView);
 
-        //初始化控件
-        initView(mContextView);
+        //初始化控件  这里使用了 butterknife 这个可以 去掉
+//        initView(mContextView);
+        ButterKnife.bind(this);
 
         //业务操作
         doBusiness(this);
-         ButterKnife.bind(this);
 
     }
 

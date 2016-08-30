@@ -41,15 +41,14 @@ public abstract class BaseFragment extends Fragment implements IBaseFragment {
             }
         } else {
             mContextView = inflater.inflate(bindLayout(), container);
-            // 控件初始化
-            initView(mContextView);
-
+            // 控件初始化   这里使用了 butterknife 这个可以 去掉
+//            initView(mContextView);
+            ButterKnife.bind(mContextView);
         }
 
         //业务处理
         doBusiness(getActivity());
 
-        ButterKnife.bind(mContextView);
 
         return mContextView;
     }

@@ -13,6 +13,8 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
 
+import com.liwe.myapp.MApplication;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -23,16 +25,16 @@ import java.util.List;
  * Created by： v7428477
  * email：764213580@qq.com
  */
-public class ToolsSYS {
+public class ToolSYS {
 
     /*** Log输出标识 **/
-    private static final String TAG = ToolsSYS.class.getSimpleName();
+    private static final String TAG = ToolSYS.class.getSimpleName();
 
     /*** 屏幕显示材质 **/
     private static final DisplayMetrics mDisplayMetrics = new DisplayMetrics();
 
     /** 上下文 **/
-    private static final Context context = null;
+    private static final Context context = MApplication.gainContext();
 
     /** 操作系统名称(GT-I9100G) ***/
     public static final String MODEL_NUMBER = Build.MODEL;
