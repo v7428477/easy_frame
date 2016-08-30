@@ -11,7 +11,9 @@ import android.view.View;
  * email：764213580@qq.com
  */
 public abstract class BaseActivity  extends Activity implements  IBaseActivity {
-private View mContextView = null;
+    private View mContextView = null;
+    private   String TAG = this.getClass().getSimpleName().toString();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

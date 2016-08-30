@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 public abstract class BaseFragment extends Fragment implements IBaseFragment {
 
     private View mContextView = null;
+    private String TAG = this.getClass().getSimpleName().toString();
+
     @Override //view 附加到activity 的时候
     public void onAttach(Context context) {
         super.onAttach(context);
