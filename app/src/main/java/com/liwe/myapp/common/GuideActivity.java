@@ -1,9 +1,11 @@
-package com.liwe.myapp;
+package com.liwe.myapp.common;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.liwe.myapp.R;
+
+public class GuideActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

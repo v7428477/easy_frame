@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.ButterKnife;
+
 /**
  * Date： 2016/8/30.
  * Created by： v7428477
@@ -46,6 +48,8 @@ public abstract class BaseFragment extends Fragment implements IBaseFragment {
 
         //业务处理
         doBusiness(getActivity());
+
+        ButterKnife.bind(mContextView);
 
         return mContextView;
     }

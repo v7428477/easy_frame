@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import butterknife.ButterKnife;
+
 /**
  * Date： 2016/8/30.
  * Created by： v7428477
@@ -27,6 +29,7 @@ public abstract class BaseActivity  extends Activity implements  IBaseActivity {
 
         //业务操作
         doBusiness(this);
+         ButterKnife.bind(this);
 
     }
 
