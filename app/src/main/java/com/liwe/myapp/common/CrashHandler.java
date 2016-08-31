@@ -101,7 +101,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             @Override
             public void run() {
                 Looper.prepare();
-                ToolToast.showLong(mContext, mContext.getResources().getString(R.string.app_error)+"11");
+                ToolToast.showLong(mContext, mContext.getResources().getString(R.string.app_error) + "11");
                 Looper.loop();
             }
         }.start();
