@@ -2,23 +2,27 @@ package com.liwe.myapp.common;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import com.liwe.myapp.R;
 import com.liwe.myapp.base.BaseActivity;
-import com.liwe.myapp.tools.ToolToast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import butterknife.Bind;
-import butterknife.OnClick;
 
 public class GuideActivity extends BaseActivity {
-    private String s;
+    List<Map<String, Object>> mData = new ArrayList<Map<String, Object>>();
 
-    @Bind(R.id.mytext)
-    TextView mytext;
-    @OnClick(R.id.mytext) void show(){
-        ToolToast.showShort(this,"chek me");
-    }
+    @Bind(R.id.mlistview)
+    ListView mlistview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +36,25 @@ public class GuideActivity extends BaseActivity {
 
     @Override
     public void doBusiness(Context mContext) {
-        mytext.setText("check test ");
+        Map<String, Object> item = new HashMap<String, Object>();
+        item.put("name", "1111");
+        mData.add(item);
 
-        System.out.println(s.equals("any string"));
+
+        mlistview.setAdapter(new SimpleAdapter(this, mData,
+                android.R.layout.simple_list_item_1, new String[]{
+                "name"
+        }, new int[]{
+                android.R.id.text1
+        }));
+
+        mlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
+
     }
 
     @Override

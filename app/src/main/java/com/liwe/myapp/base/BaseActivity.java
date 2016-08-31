@@ -63,6 +63,7 @@ public abstract class BaseActivity  extends Activity implements  IBaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        ButterKnife.unbind(this);
         destroy();
     }
 

@@ -27,6 +27,7 @@ import java.util.Map;
  * Date： 2016/8/31.
  * Created by： v7428477
  * email：764213580@qq.com
+ * 异常处理的handler
  */
 public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
