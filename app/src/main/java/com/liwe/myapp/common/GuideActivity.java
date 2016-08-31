@@ -6,12 +6,19 @@ import android.widget.TextView;
 
 import com.liwe.myapp.R;
 import com.liwe.myapp.base.BaseActivity;
+import com.liwe.myapp.tools.ToolToast;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 
 public class GuideActivity extends BaseActivity {
-    @Bind(R.id.mytext)   TextView textView;
+    private String s;
 
+    @Bind(R.id.mytext)
+    TextView mytext;
+    @OnClick(R.id.mytext) void show(){
+        ToolToast.showShort(this,"chek me");
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +32,9 @@ public class GuideActivity extends BaseActivity {
 
     @Override
     public void doBusiness(Context mContext) {
-        textView.setText("123123123");
+        mytext.setText("check test ");
+
+        System.out.println(s.equals("any string"));
     }
 
     @Override

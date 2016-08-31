@@ -47,7 +47,10 @@ public class ToolSYS {
     ;
 
     /** 应用程序版本 ***/
-    public static final String APP_VERSION = getVersion();
+    public static final String APP_VERSION_NAME = getVersionName();
+
+    /** 应用程序版本号 ***/
+    public static final int APP_VERSION_CODE = getVersionCode();
 
     /*** 屏幕宽度 **/
     public static final int SCREEN_WIDTH = getDisplayMetrics().widthPixels;
@@ -87,9 +90,9 @@ public class ToolSYS {
     /**
      * 获取应用程序版本（versionName）
      *
-     * @return 当前应用的版本号
+     * @return 当前应用的版本名称
      */
-    public static String getVersion() {
+    public static String getVersionName() {
         PackageManager manager = context.getPackageManager();
         PackageInfo info = null;
         try {
@@ -100,6 +103,24 @@ public class ToolSYS {
         }
 
         return info.versionName;
+    }
+
+    /**
+     * 获取应用程序版本（versionName）
+     *
+     * @return 当前应用的版本名称
+     */
+    public static int getVersionCode() {
+        PackageManager manager = context.getPackageManager();
+        PackageInfo info = null;
+        try {
+            info = manager.getPackageInfo(context.getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e(TAG, "获取应用程序版本失败，原因：" + e.getMessage());
+            return -1;
+        }
+
+        return info.versionCode;
     }
 
     /**
