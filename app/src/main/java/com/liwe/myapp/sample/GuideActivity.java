@@ -1,7 +1,6 @@
-package com.liwe.myapp.common;
+package com.liwe.myapp.sample;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,6 +10,8 @@ import android.widget.TextView;
 
 import com.liwe.myapp.R;
 import com.liwe.myapp.base.BaseActivity;
+import com.liwe.myapp.tools.ToolIntent;
+import com.liwe.myapp.tools.ToolSYS;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,29 +41,26 @@ public class GuideActivity extends BaseActivity {
     public void doBusiness(Context mContext) {
         Map<String, Object> item = new HashMap<String, Object>();
         item.put("name", "GuideActivity");
+        item.put("description"," Android 仿美团网,探索ListView的A-Z字母排序功能实现选择城市");
         mData.add(item);
 
 
         mlistview.setAdapter(new SimpleAdapter(this, mData,
-                android.R.layout.simple_list_item_1, new String[]{
-                "name"
+               R.layout.item_guide, new String[]{
+                "name","description"
         }, new int[]{
-                android.R.id.text1
+                R.id.item_text,R.id.item_description
         }));
 
         mlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent();
-//                    intent.setClass(GuideActivity.this,GuideActivity.class);
                 try {
-                    String  a  = ((TextView)view).getText().toString();
-                    Class aClass = Class.forName("com.liwe.myapp.common."+a);
-                    intent.setClass(GuideActivity.this,aClass);
+                    Class aClass = Class.forName(ToolSYS.CLURL + ((TextView) parent.getChildAt(0)).getText().toString());
+                    ToolIntent.ClassToActivity(GuideActivity.this, aClass);
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
-                startActivity(intent);
 
             }
         });

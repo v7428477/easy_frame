@@ -27,6 +27,8 @@ import java.util.List;
  */
 public class ToolSYS {
 
+    public static  final String CLURL = "com.liwe.myapp.sample.";
+
     /*** Log输出标识 **/
     private static final String TAG = ToolSYS.class.getSimpleName();
 
