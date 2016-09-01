@@ -40,7 +40,7 @@ public class GuideActivity extends BaseActivity {
     @Override
     public void doBusiness(Context mContext) {
         Map<String, Object> item = new HashMap<String, Object>();
-        item.put("name", "GuideActivity");
+        item.put("name", "SelectActivity");
         item.put("description"," Android 仿美团网,探索ListView的A-Z字母排序功能实现选择城市");
         mData.add(item);
 
@@ -56,7 +56,7 @@ public class GuideActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 try {
-                    Class aClass = Class.forName(ToolSYS.CLURL + ((TextView) parent.getChildAt(0)).getText().toString());
+                    Class aClass = Class.forName(ToolSYS.CLURL + ((TextView) view.findViewById(R.id.item_text)).getText().toString());
                     ToolIntent.ClassToActivity(GuideActivity.this, aClass);
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
