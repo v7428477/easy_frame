@@ -3,8 +3,6 @@ package com.liwe.myapp;
 import android.app.Application;
 import android.content.Context;
 
-import com.liwe.myapp.common.CrashHandler;
-
 /**
  * 增加android 全局异常捕获弹出提示退出应用，收集错误信息
  * Date： 2016/8/30.
@@ -19,8 +17,8 @@ public class MApplication extends Application {//Application：用来管理应�
     public void onCreate() {
         super.onCreate();
         instance = this;
-        CrashHandler crashHandler = CrashHandler.getInstance();
-        crashHandler.init(instance);
+//        CrashHandler crashHandler = CrashHandler.getInstance();
+//        crashHandler.init(instance);
     }
 
     /**

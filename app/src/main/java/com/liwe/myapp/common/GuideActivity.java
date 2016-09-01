@@ -1,11 +1,13 @@
 package com.liwe.myapp.common;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.liwe.myapp.R;
 import com.liwe.myapp.base.BaseActivity;
@@ -37,7 +39,7 @@ public class GuideActivity extends BaseActivity {
     @Override
     public void doBusiness(Context mContext) {
         Map<String, Object> item = new HashMap<String, Object>();
-        item.put("name", "1111");
+        item.put("name", "GuideActivity");
         mData.add(item);
 
 
@@ -51,6 +53,16 @@ public class GuideActivity extends BaseActivity {
         mlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent();
+//                    intent.setClass(GuideActivity.this,GuideActivity.class);
+                try {
+                    String  a  = ((TextView)view).getText().toString();
+                    Class aClass = Class.forName("com.liwe.myapp.common."+a);
+                    intent.setClass(GuideActivity.this,aClass);
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                startActivity(intent);
 
             }
         });
