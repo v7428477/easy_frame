@@ -39,7 +39,7 @@ public class BaseMapActivity extends BaseActivity {
         mBaiduMap.setTrafficEnabled(true);
 
         //开启热力图
-        mBaiduMap.setBaiduHeatMapEnabled(true);
+        mBaiduMap.setBaiduHeatMapEnabled(false);
 
     }
 
