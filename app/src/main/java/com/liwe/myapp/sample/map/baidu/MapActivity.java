@@ -45,8 +45,8 @@ public class MapActivity extends BaseActivity {
     @Override
     public void doBusiness(Context mContext) {
         Map<String, Object> item = new HashMap<String, Object>();
-        item.put("name", "SelectActivity");
-        item.put("description"," Android 仿美团网,探索ListView的A-Z字母排序功能实现选择城市");
+        item.put("name", "BaseMapActivity");
+        item.put("description"," 百度 基础地图显示");
         mData.add(item);
 
 

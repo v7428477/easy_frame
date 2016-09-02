@@ -3,6 +3,8 @@ package com.liwe.myapp;
 import android.app.Application;
 import android.content.Context;
 
+import com.baidu.mapapi.SDKInitializer;
+
 /**
  * 增加android 全局异常捕获弹出提示退出应用，收集错误信息
  * Date： 2016/8/30.
@@ -19,6 +21,10 @@ public class MApplication extends Application {//Application：用来管理应�
         instance = this;
 //        CrashHandler crashHandler = CrashHandler.getInstance();
 //        crashHandler.init(instance);
+
+        //在使用SDK各组件之前初始化context信息，传入ApplicationContext
+        //注意该方法要再setContentView方法之前实现
+        SDKInitializer.initialize(getApplicationContext());
     }
 
     /**

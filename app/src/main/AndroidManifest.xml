@@ -43,6 +43,10 @@
         <activity
             android:name=".sample.map.baidu.MapActivity"
             android:launchMode="singleTask"/>
+        <!--百度地图基础地图-->
+        <activity
+            android:name=".sample.map.baidu.BaseMapActivity"
+            android:launchMode="singleTask"/>
     </application>
 
 </manifest>
