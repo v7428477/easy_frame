@@ -29,6 +29,8 @@ public class ToolSYS {
 
     public static  final String CLURL = "com.liwe.myapp.sample.";
 
+    public static  final String CLURL_MAP_BAIDU = "com.liwe.myapp.sample.map.baidu.";
+
     /*** Log输出标识 **/
     private static final String TAG = ToolSYS.class.getSimpleName();
 
