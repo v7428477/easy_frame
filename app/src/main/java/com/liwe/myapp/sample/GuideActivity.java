@@ -51,6 +51,12 @@ public class GuideActivity extends BaseActivity {
         baidumap.put("description", "百度地图入口");
         mData.add(baidumap);
 
+        Map<String, Object> zxingmap = new HashMap<String, Object>();
+        zxingmap.put("name", "ZXingActivity");
+        zxingmap.put("URL", ToolSYS.CLURL_ZXING);
+        zxingmap.put("description", "二维码生成识别一类");
+        mData.add(zxingmap);
+
         mlistview.setAdapter(new SimpleAdapter(this, mData,
                 R.layout.item_guide, new String[]{
                 "name", "description"

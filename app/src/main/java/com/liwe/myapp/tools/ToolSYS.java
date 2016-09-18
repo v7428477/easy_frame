@@ -27,9 +27,13 @@ import java.util.List;
  */
 public class ToolSYS {
 
-    public static  final String CLURL = "com.liwe.myapp.sample.";
+    public static final String GIT_URL = "https://github.com/v7428477/easy_frame";
 
-    public static  final String CLURL_MAP_BAIDU = "com.liwe.myapp.sample.map.baidu.";
+    public static final String CLURL = "com.liwe.myapp.sample.";
+
+    public static final String CLURL_MAP_BAIDU = "com.liwe.myapp.sample.map.baidu.";
+
+    public static final String CLURL_ZXING = "com.liwe.myapp.sample.zxing.";
 
     /*** Log输出标识 **/
     private static final String TAG = ToolSYS.class.getSimpleName();
